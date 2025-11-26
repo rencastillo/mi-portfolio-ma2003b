@@ -47,22 +47,19 @@ def check_kmo_adequacy(correlation_matrix: pd.DataFrame) -> Tuple[float, str]:
         
     Returns:
         Tuple con el valor KMO y su interpretación.
+        
+    Raises:
+        NotImplementedError: Esta función es un placeholder.
+    
+    Example:
+        Para implementar, usar factor_analyzer:
+        >>> from factor_analyzer.factor_analyzer import calculate_kmo
+        >>> kmo_all, kmo_model = calculate_kmo(df)
     """
-    # Placeholder - implementar con factor_analyzer
-    kmo_value = 0.0
-    
-    if kmo_value >= 0.9:
-        interpretation = "Excelente"
-    elif kmo_value >= 0.8:
-        interpretation = "Muy bueno"
-    elif kmo_value >= 0.7:
-        interpretation = "Bueno"
-    elif kmo_value >= 0.6:
-        interpretation = "Mediocre"
-    else:
-        interpretation = "Inaceptable"
-    
-    return kmo_value, interpretation
+    raise NotImplementedError(
+        "Esta función es un placeholder. Implementar usando factor_analyzer: "
+        "from factor_analyzer.factor_analyzer import calculate_kmo"
+    )
 
 
 def standardize_data(df: pd.DataFrame) -> pd.DataFrame:

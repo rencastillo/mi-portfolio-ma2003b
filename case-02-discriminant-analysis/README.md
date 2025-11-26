@@ -113,7 +113,7 @@ scipy (1.15.2)                          # Pruebas estadísticas
 
 ### Diccionario de Datos
 
-Ver documentación completa en: [`data/DATA_DICTIONARY.md`](./data/DATA_DICTIONARY.md)
+Ver documentación completa en: [`data/credit_risk_data_dictionary.md`](./data/credit_risk_data_dictionary.md)
 
 ---
 
@@ -234,7 +234,7 @@ case-02-discriminant-analysis/
 ├── README.md                            # Este documento
 ├── data/
 │   ├── credit_risk_data.csv            # Dataset (10,000+ registros)
-│   └── DATA_DICTIONARY.md              # Diccionario de datos
+│   └── credit_risk_data_dictionary.md   # Diccionario de datos
 ├── notebooks/
 │   └── LendSmart_Analysis.ipynb        # Análisis completo (LDA vs QDA)
 ├── reports/

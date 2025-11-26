@@ -93,7 +93,7 @@ Las 23 variables se organizan en **5 dimensiones teóricas**:
 
 ### Diccionario de Datos
 
-Ver documentación completa en: [`data/CUSTOMER_SATISFACTION_DATA_DICTIONARY-1.md`](./data/CUSTOMER_SATISFACTION_DATA_DICTIONARY-1.md)
+Ver documentación completa en: [`data/DATA_DICTIONARY.md`](./data/DATA_DICTIONARY.md)
 
 ---
 
@@ -209,7 +209,7 @@ case-01-factor-analysis/
 ├── README.md                                    # Este documento
 ├── data/
 │   ├── customer_satisfaction_data.csv          # Dataset (3,400 × 23)
-│   └── CUSTOMER_SATISFACTION_DATA_DICTIONARY-1.md  # Diccionario de datos
+│   └── DATA_DICTIONARY.md                      # Diccionario de datos
 ├── notebooks/
 │   └── Costumer_service.ipynb                  # Análisis completo
 ├── reports/

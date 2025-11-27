@@ -1,7 +1,7 @@
 # Case 03: Cluster Analysis
 
-## 📹 Video Presentation
-*Video coming soon*
+## 📹 Presentación en Video
+*Video próximamente*
 
 ## Descripción
 Análisis de clustering para segmentación de datos.

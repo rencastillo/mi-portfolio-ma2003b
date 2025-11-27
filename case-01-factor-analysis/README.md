@@ -5,8 +5,8 @@
 **Methodology**: Principal Axis Factoring with Varimax Rotation  
 **Dataset**: 3,400 customer responses × 23 satisfaction variables  
 
-## 📹 Video Presentation
-[**Watch the Factor Analysis Video**](https://drive.google.com/file/d/1ssIyt6oCU9w0Ol1uttTkc2A9o-DEnhXz/view?usp=drive_link)
+## 📹 Presentación en Video
+[**Ver el Video de Análisis Factorial**](https://drive.google.com/file/d/1ssIyt6oCU9w0Ol1uttTkc2A9o-DEnhXz/view?usp=drive_link)
 
 ---
 

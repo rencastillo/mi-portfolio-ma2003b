@@ -6,6 +6,9 @@
 **Dataset**: 10,000+ loan records × 15 features  
 **Target Variable**: loan_status (0=Good, 1=Default)  
 
+## 📹 Video Presentation
+[**Watch the LendSmart Analysis Video**](https://drive.google.com/file/d/1GWj7nylA_gHuNA0eEiRJaGbiwR6t-A68/view?usp=drive_link)
+
 ---
 
 ## 1. Contexto del Negocio

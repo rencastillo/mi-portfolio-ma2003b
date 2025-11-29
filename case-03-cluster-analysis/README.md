@@ -58,51 +58,147 @@ Variables principales usadas en el clustering:
 
 ---
 
-## 5. Recomendaciones de negocio (resumen)
-- Segmento VIP: programa de fidelización premium.  
-- Ahorradores: cross-selling basado en calidad, no descuentos.  
-- Gastadores jóvenes: marketing digital y opciones de pago flexibles.  
-- Segmento medio: campañas de volumen y retención con bajo costo.
+# Case 03: Análisis de Clústeres — Segmentación de Clientes
+
+**Fecha del análisis**: Noviembre 2025  
+**Cliente**: Megamart Retail Group  
+**Metodologías aplicadas**: K-Means, Clustering Jerárquico (dendrograma), análisis de silhouette  
+**Datos**: Demográficos y comportamiento de gasto de clientes (muestra)  
+**Objetivo**: Segmentación no supervisada para diseño de estrategias de marketing y personalización
+
+## 📹 Presentación en Video
+[**Ver el Video de Case 03 — Segmentación Megamart**](https://drive.google.com/file/d/1tPVL8W6lEwPGtgwEMRshIULkYKvjriua/view?usp=sharing)
 
 ---
 
-## 6. Estructura del repositorio
-case-03-customer-segmentation/
-├── README.md  
-├── data/  
-│   ├── megamart_customers.csv  
-│   └── megamart_data_dictionary.md  
-├── notebooks/  
-│   └── MegamartClustering.ipynb  
-├── reports/  
-│   ├── customer_profiles.pdf  
-│   └── marketing_strategy_v1.pptx  
-└── visualizations/  
-    ├── elbow_method.png  
-    ├── dendrogram.png  
-    ├── clusters_2d_scatter.png  
-    └── clusters_3d_age.png
+## 1. Contexto del Negocio
+
+Megamart busca pasar de una estrategia de marketing genérica a campañas personalizadas identificando segmentos de clientes con comportamientos y potenciales de valor distintos. La segmentación permitirá diseñar promociones, programas de fidelización y acciones de retención más eficientes.
 
 ---
 
-## 7. Reproducibilidad — cómo ejecutar (Windows)
-1. Crear entorno virtual (opcional):
-   - python -m venv .venv
-   - .venv\Scripts\activate
+## 2. Metodología
+
+### Métodos aplicados
+- **K-Means**: segmentación principal, optimización por inercia y evaluación con silhouette.
+- **Clustering Jerárquico (aglutinativo)**: dendrograma para apoyar la selección de K y validar la estructura.
+
+### Decisiones metodológicas clave
+- **Escalado**: `StandardScaler` aplicado antes de clustering.
+- **Métrica**: Euclidean para K-Means y Ward para jerárquico.
+- **Selección de K**: Elbow method + silhouette score + inspección de dendrograma.
+
+### Herramientas y librerías
+```text
+pandas (>=2.0)
+numpy (>=2.0)
+scikit-learn (>=1.2)
+matplotlib
+seaborn
+scipy
+plotly (opcional)
+```
+
+---
+
+## 3. Datos
+
+- **Fuente**: Megamart Loyalty Program (muestra).  
+- **Tamaño**: ~200 observaciones (ejemplo) — ajustar según dataset real.  
+- **Variables clave**:
+   - `annual_income` (k$)
+   - `spending_score` (1-100)
+   - `age`
+   - `purchase_frequency` (opcional)
+
+Ver diccionario completo en: `data/megamar t_data_dictionary.md` (o el archivo equivalente en `data/`).
+
+---
+
+## 4. Hallazgos Principales
+
+- **K sugerido**: 5 clústeres (Elbow + silhouette + dendrograma).
+- **Perfiles identificados**:
+   - **Cluster 0 — Ahorradores cautelosos**: alto ingreso, bajo gasto.
+   - **Cluster 1 — Promedio**: ingreso y gasto medios.
+   - **Cluster 2 — VIP**: alto ingreso, alto gasto.
+   - **Cluster 3 — Gastadores jóvenes**: bajo/medio ingreso, alto gasto.
+   - **Cluster 4 — Presupuesto ajustado**: bajo ingreso, bajo gasto.
+
+- **Edad** correlaciona con comportamiento; segmentos jóvenes concentran gasto relativo mayor.
+
+Implicación: Estos perfiles permiten acciones dirigidas (fidelización premium, cross-sell, promociones digitales, campañas de retención).
+
+---
+
+## 5. Recomendaciones de Negocio
+
+- **Segmento VIP**: lanzar programa premium con beneficios exclusivos y ofertas personalizadas.
+- **Ahorradores**: enfoque en productos de valor (cross-selling) y no en descuentos frecuentes.
+- **Gastadores jóvenes**: campañas digitales y pagos flexibles (BNPL, descuentos temporales).
+- **Presupuesto ajustado**: promociones por volumen y ofertas de bajo costo.
+
+Monitoreo: definir KPIs por segmento (LTV, churn, avg order value) y re-segmentar trimestralmente.
+
+---
+
+## 6. Contenido del Caso
+
+```
+case-03-cluster-analysis/
+├── README.md                               # Este documento
+├── data/
+│   ├── retail_customer_data-1.csv
+│   └── retail_customer_data_with_labels-1.csv (si existe)
+├── notebooks/
+│   └── MegamartClustering.ipynb            # Notebook principal
+├── reports/
+│   └── customer_profiles.pdf
+└── visualizations/
+      ├── elbow_method.png
+      ├── dendrogram.png
+      ├── clusters_2d_scatter.png
+      └── clusters_3d_age.png
+```
+
+---
+
+## 7. Reproducibilidad — Cómo ejecutar (macOS / Linux)
+
+1. Crear y activar entorno virtual (zsh):
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+```
+
 2. Instalar dependencias:
-   - pip install -r requirements.txt
-3. Abrir y ejecutar el notebook:
-   - cd notebooks
-   - jupyter notebook MegamartClustering.ipynb
-   (o jupyter lab)
 
-Notas: Escalar variables con StandardScaler antes de aplicar K-Means. Validar K con Elbow + silhouette y revisar dendrograma.
+```bash
+pip install -r requirements.txt
+```
+
+3. Ejecutar el notebook:
+
+```bash
+cd notebooks
+jupyter notebook MegamartClustering.ipynb
+# o jupyter lab
+```
+
+Notas:
+- Ajustar `random_state` para reproducibilidad.
+- Escalar solo con los parámetros aprendidos en el conjunto de entrenamiento.
+- Validar elección de K con cross-validation y scores de silhouette.
 
 ---
 
 ## 8. Referencias
-- Hartigan, J. A. (1975). Clustering Algorithms.  
-- Kaufman, L., & Rousseeuw, P. J. (2009). Finding groups in data.  
+
+- Hartigan, J. A. (1975). Clustering Algorithms.
+- Kaufman, L., & Rousseeuw, P. J. (2009). Finding groups in data.
 - Ng, A. (2000). K-means and Elbow Method (CS229 notes).
 
-Licencia: MIT
+**Portfolio**: MA2003B - Análisis Multivariado  
+**Software**: Python 3.x  
+**Licencia**: MIT

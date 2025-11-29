@@ -88,4 +88,59 @@ Para reproducir cualquiera de los tres proyectos, se requiere el siguiente entor
 
 ---
 
+## 6. Estructura del Repositorio
+
+```
+mi-portfolio-ma2003b/
+│
+├── README.md                                           # Este documento
+├── LICENSE                                             # Licencia (MIT)
+├── pyproject.toml                                      # Configuración del proyecto Python
+├── requirements.txt                                    # Dependencias del proyecto
+│
+├── case-01-factor-analysis/
+│   ├── README.md                                       # Documentación Case 01: Factor Analysis
+│   ├── data/
+│   │   ├── customer_satisfaction_data.csv              # Dataset (encuestas, 30+ variables)
+│   │   └── customer_satisfaction_data_dictionary.md    # Diccionario de datos
+│   ├── notebooks/
+│   │   └── Costumer_service.ipynb                      # Notebook con análisis factorial
+│   ├── reports/                                        # Reportes generados
+│   └── visualizations/                                 # Gráficos (scree plot, cargas, etc.)
+│
+├── case-02-discriminant-analysis/
+│   ├── README.md                                       # Documentación Case 02: Discriminant Analysis
+│   │                                                   # 📹 Incluye enlace de video
+│   ├── data/
+│   │   ├── credit_risk_data.csv                        # Dataset (10,000+ registros)
+│   │   └── credit_risk_data_dictionary.md              # Diccionario de datos
+│   ├── notebooks/
+│   │   └── LendSmart_Analysis.ipynb                    # Notebook con LDA vs QDA
+│   ├── reports/                                        # Reportes generados
+│   └── visualizations/                                 # Gráficos (ROC, matrices de confusión, etc.)
+│
+├── case-03-cluster-analysis/
+│   ├── README.md                                       # Documentación Case 03: Cluster Analysis
+│   │                                                   # 📹 Incluye enlace de video
+│   ├── data/
+│   │   ├── retail_customer_data-1.csv                  # Dataset (segmentación de clientes)
+│   │   └── retail_customer_data_with_labels-1.csv     # Dataset etiquetado
+│   ├── notebooks/
+│   │   └── MegamartClusttetring.ipynb                  # Notebook con K-Means y clustering jerárquico
+│   ├── reports/                                        # Reportes generados
+│   └── visualizations/                                 # Gráficos (elbow, dendrograma, scatter, etc.)
+│
+└── presentation/                                        # Presentaciones finales
+```
+
+### Descripción de Carpetas Clave
+
+- **case-0X-XXX/**: Cada carpeta es un caso de estudio independiente con su propia documentación, datos y análisis.
+- **data/**: Contiene datasets originales en CSV y diccionarios de datos en Markdown.
+- **notebooks/**: Jupyter Notebooks con el código, análisis exploratorio y visualizaciones.
+- **reports/**: Reportes PDF o documentos generados (resúmenes ejecutivos, reportes técnicos).
+- **visualizations/**: Gráficos estáticos (PNG/PDF) para reportes y presentaciones.
+
+---
+
 **© 2025 Equipo de Análisis Multivariado - ITESM**

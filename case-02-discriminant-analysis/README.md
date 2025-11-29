@@ -7,7 +7,7 @@
 **Target Variable**: loan_status (0=Good, 1=Default)  
 
 ## 📹 Presentación en Video
-[**Ver el Video de Análisis LendSmart**](https://drive.google.com/file/d/1GWj7nylA_gHuNA0eEiRJaGbiwR6t-A68/view?usp=drive_link)
+[**Ver el Video de Análisis LendSmart**](https://drive.google.com/file/d/1GWj7nylA_gHuNA0eEiRJaGbiwR6t-A68/view?usp=sharing)
 
 ---
 
